@@ -1,3 +1,4 @@
+import FeaturedDestination from "@/components/modules/home/FeaturedDestination";
 import Hero from "@/components/modules/home/Hero";
 import React from "react";
 
@@ -14,6 +15,7 @@ export default function Homepage() {
       <div className=" absolute left-0 right-0 container mx-auto px-4 md:px-6 w-full h-full">
         <Hero />
       </div>
+      
     </div>
   );
 }
