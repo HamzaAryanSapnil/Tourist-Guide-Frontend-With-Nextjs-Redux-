@@ -1,9 +1,11 @@
+import Homepage from "@/pages/Home/Homepage";
 
 
 export default function Home() {
   return (
    <div>
-    this is home
+     <Homepage/>
+     
    </div>
   );
 }
