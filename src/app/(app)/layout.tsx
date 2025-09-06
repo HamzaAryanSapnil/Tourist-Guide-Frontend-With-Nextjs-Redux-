@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar"
 
 interface ILayoutProps {
@@ -12,6 +13,7 @@ export default  function layout({ children }: ILayoutProps) {
     <div>
       <Navbar/>
       <div className="">{children}</div>
+      <Footer/>
     </div>
   );
 }

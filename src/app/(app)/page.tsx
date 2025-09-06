@@ -1,5 +1,6 @@
 import Deals from "@/components/modules/home/Deals";
 import FeaturedDestination from "@/components/modules/home/FeaturedDestination";
+import Newsletter from "@/components/modules/home/Newsletter";
 import StatsSection from "@/components/modules/home/StatsSection";
 import VideoSection from "@/components/modules/home/VideoSection";
 import WhyChooseUs from "@/components/modules/home/WhyChooseUs";
@@ -16,6 +17,8 @@ export default function Home() {
       <StatsSection/>
       <Deals/>
       <VideoSection/>
+      <Newsletter/>
+
      </div>
    </div>
   );
