@@ -1,5 +1,5 @@
 import { useId } from "react";
-import { HouseIcon, InboxIcon, SearchIcon, ZapIcon } from "lucide-react";
+import { DockIcon, HouseIcon, InboxIcon, SearchIcon, ZapIcon } from "lucide-react";
 
 import Logo from "@/components/logo";
 import { Button } from "@/components/ui/button";
@@ -21,8 +21,8 @@ import Link from "next/link";
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
-  { href: "#", label: "Home", icon: HouseIcon, active: true },
-  { href: "#", label: "Inbox", icon: InboxIcon },
+  { href: "/", label: "Home", icon: HouseIcon},
+  { href: "/about", label: "About", icon: DockIcon },
   { href: "#", label: "Insights", icon: ZapIcon },
 ];
 
@@ -81,7 +81,6 @@ export default function Navbar() {
                           <NavigationMenuLink
                             href={link.href}
                             className="flex-row items-center gap-2 py-1.5"
-                            active={link.active}
                           >
                             <Icon
                               size={16}
@@ -112,7 +111,6 @@ export default function Navbar() {
                 return (
                   <NavigationMenuItem key={index}>
                     <NavigationMenuLink
-                      active={link.active}
                       href={link.href}
                       className="text-foreground hover:text-primary flex-row items-center gap-2 py-1.5 font-medium"
                     >

@@ -7,7 +7,7 @@ import Logo from "./logo";
 export default function Footer() {
   return (
     <footer className="border-t bg-background text-foreground">
-      <div className="container mx-auto px-4 py-12 grid gap-8 lg:grid-cols-4 w-full justify-items-end">
+      <div className="container mx-auto px-4 py-12 grid gap-8 lg:grid-cols-4 w-full lg:justify-items-end">
         {/* Brand Section */}
         <div className="space-y-3">
           <div className="w-fit">
