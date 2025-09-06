@@ -1,3 +1,4 @@
+import Deals from "@/components/modules/home/Deals";
 import FeaturedDestination from "@/components/modules/home/FeaturedDestination";
 import StatsSection from "@/components/modules/home/StatsSection";
 import WhyChooseUs from "@/components/modules/home/WhyChooseUs";
@@ -12,6 +13,7 @@ export default function Home() {
       <FeaturedDestination/>
       <WhyChooseUs/>
       <StatsSection/>
+      <Deals/>
      </div>
    </div>
   );
