@@ -1,13 +1,19 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar"
 
-export default  function layout({ children }: any) {
+interface ILayoutProps {
+  children: React.ReactNode;
+}
+
+export default  function layout({ children }: ILayoutProps) {
   
   return (
     <div>
       <Navbar/>
-      <div className="container mx-auto">{children}</div>
+      <div className="">{children}</div>
+      <Footer/>
     </div>
   );
 }
