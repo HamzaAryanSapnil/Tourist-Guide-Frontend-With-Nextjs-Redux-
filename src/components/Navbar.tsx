@@ -1,9 +1,8 @@
 import { useId } from "react";
-import { DockIcon, FileQuestionMark, HouseIcon, InboxIcon, SearchIcon, ZapIcon } from "lucide-react";
+import { Car, DockIcon, FileQuestionMark, HouseIcon } from "lucide-react";
 
 import Logo from "@/components/logo";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -16,12 +15,12 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { ModeToggle } from "./theme-toggler";
-import Search from "./search-input/search";
 import Link from "next/link";
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
-  { href: "/", label: "Home", icon: HouseIcon},
+  { href: "/", label: "Home", icon: HouseIcon },
+  { href: "/all-tours", label: "All Tours", icon: Car },
   { href: "/about", label: "About", icon: DockIcon },
   { href: "/faq", label: "Faq", icon: FileQuestionMark },
 ];
@@ -129,9 +128,7 @@ export default function Navbar() {
           {/* Right side */}
           <div className="flex flex-1 items-center justify-end gap-2">
             <ModeToggle />
-            <div className="relative">
-              <Search id={id} />
-            </div>
+            <Button>Login</Button>
           </div>
         </div>
       </div>
