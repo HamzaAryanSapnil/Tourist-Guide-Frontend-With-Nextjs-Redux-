@@ -10,7 +10,7 @@ export default function FeaturedDestination() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 items-start justify-items-stretch ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 items-start justify-items-stretch w-full">
         <div className="lg:col-span-9 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4">
           <div className="relative grid-cols-1 md:col-span-2 lg:col-span-12 object-cover  w-full min-h-80 lg:h-96">
             <div className=" absolute top-0 left-0 w-full h-full bg-black/10 rounded-xl z-10"></div>
