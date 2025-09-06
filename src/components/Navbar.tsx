@@ -99,7 +99,7 @@ export default function Navbar() {
             </Popover>
             {/* Logo */}
             <div className="flex items-center">
-              <Link href="#" className="text-white font-black  hover:text-primary/90">
+              <Link href="#" className=" font-black  hover:text-primary/90">
                 <Logo />
               </Link>
             </div>
