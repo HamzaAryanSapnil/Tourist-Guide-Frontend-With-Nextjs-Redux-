@@ -1,5 +1,5 @@
 import { useId } from "react";
-import { DockIcon, HouseIcon, InboxIcon, SearchIcon, ZapIcon } from "lucide-react";
+import { DockIcon, FileQuestionMark, HouseIcon, InboxIcon, SearchIcon, ZapIcon } from "lucide-react";
 
 import Logo from "@/components/logo";
 import { Button } from "@/components/ui/button";
@@ -23,7 +23,7 @@ import Link from "next/link";
 const navigationLinks = [
   { href: "/", label: "Home", icon: HouseIcon},
   { href: "/about", label: "About", icon: DockIcon },
-  { href: "#", label: "Insights", icon: ZapIcon },
+  { href: "/faq", label: "Faq", icon: FileQuestionMark },
 ];
 
 export default function Navbar() {
