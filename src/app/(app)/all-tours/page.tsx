@@ -6,7 +6,7 @@ import ToursSidebar from "@/components/modules/tours/TourSidebar";
 import ToursSearchFilter from "@/components/modules/tours/ToursSearchFilter";
 
 
-export default function Page() {
+export default function Tours() {
   return (
     <section className=" w-full h-full" >
       <TourHero />
