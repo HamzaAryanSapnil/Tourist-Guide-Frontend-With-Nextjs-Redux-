@@ -1,6 +1,8 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import Link from "next/link";
 
 export default function TourCard() {
   
@@ -14,6 +16,9 @@ export default function TourCard() {
           <p className="text-muted-foreground">
             Short description of the tour goes here...
           </p>
+          <Link href={`/all-tours/${tour}`}>
+            <Button className="w-full mt-4">View Details</Button>
+          </Link>
         </Card>
       ))}
     </div>

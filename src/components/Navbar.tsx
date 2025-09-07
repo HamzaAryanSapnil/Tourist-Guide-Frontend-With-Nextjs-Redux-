@@ -23,6 +23,7 @@ const navigationLinks = [
   { href: "/all-tours", label: "All Tours", icon: Car },
   { href: "/about", label: "About", icon: DockIcon },
   { href: "/faq", label: "Faq", icon: FileQuestionMark },
+  { href: "/user/overview", label: "Dashboard", icon: FileQuestionMark },
 ];
 
 export default function Navbar() {
