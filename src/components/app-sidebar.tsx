@@ -3,24 +3,24 @@
 import * as React from "react"
 import {
   IconCamera,
+  IconCarTurbine,
   IconChartBar,
+  IconClover,
   IconDashboard,
-  IconDatabase,
   IconFileAi,
   IconFileDescription,
-  IconFileWord,
   IconFolder,
   IconHelp,
-  IconInnerShadowTop,
   IconListDetails,
-  IconReport,
+
   IconSearch,
   IconSettings,
+  IconUser,
+  IconUserDollar,
   IconUsers,
 } from "@tabler/icons-react"
 
 import { NavDocuments } from "@/components/nav-documents"
-import { NavMain } from "@/components/nav-main"
 import { NavSecondary } from "@/components/nav-secondary"
 import { NavUser } from "@/components/nav-user"
 import {
@@ -34,6 +34,7 @@ import {
 } from "@/components/ui/sidebar"
 import Link from "next/link"
 import Logo from "./logo"
+import { DollarSign, User } from "lucide-react"
 
 const data = {
   user: {
@@ -135,19 +136,24 @@ const data = {
   ],
   documents: [
     {
-      name: "Data Library",
-      url: "#",
-      icon: IconDatabase,
+      name: "Your Profile",
+      url: "/user/profile",
+      icon: IconUser,
     },
     {
-      name: "Reports",
-      url: "#",
-      icon: IconReport,
+      name: "Overview",
+      url: "/user/overview",
+      icon: IconClover,
     },
     {
-      name: "Word Assistant",
-      url: "#",
-      icon: IconFileWord,
+      name: "Your Bookings",
+      url: "/user/bookings",
+      icon: IconUserDollar,
+    },
+    {
+      name: "Your Wishlist",
+      url: "/user/wishlist",
+      icon: IconCarTurbine,
     },
   ],
 }
