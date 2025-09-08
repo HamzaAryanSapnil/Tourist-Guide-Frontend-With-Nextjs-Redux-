@@ -183,7 +183,7 @@ export default function ProfilePage() {
                 </div>
                 <p className="text-sm text-muted-foreground">{user.bio}</p>
                 <div className="flex flex-col sm:flex-row gap-2">
-                  <Link href="/profile/edit" legacyBehavior>
+                  <Link href="/profile/edit">
                     <Button size="sm">Edit Profile</Button>
                   </Link>
                   <Button
@@ -199,7 +199,7 @@ export default function ProfilePage() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-2 sm:gap-3 " w-full>
+          <div className="grid grid-cols-3 gap-2 sm:gap-3 ">
             <StatCard
               label="Bookings"
               value={user.recentBookings?.length ?? 0}

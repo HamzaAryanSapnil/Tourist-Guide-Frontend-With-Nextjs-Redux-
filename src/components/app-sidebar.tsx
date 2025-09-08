@@ -3,18 +3,21 @@
 import * as React from "react"
 import {
   IconCamera,
+  IconCar,
   IconCarTurbine,
   IconChartBar,
   IconClover,
   IconDashboard,
   IconFileAi,
   IconFileDescription,
+  IconFileTypeBmp,
   IconFolder,
   IconHelp,
   IconListDetails,
 
   IconSearch,
   IconSettings,
+  IconTypeface,
   IconUser,
   IconUserDollar,
   IconUsers,
@@ -155,8 +158,18 @@ const data = {
       url: "/user/wishlist",
       icon: IconCarTurbine,
     },
+    {
+      name: "Add Tour",
+      url: "/admin/add-tour",
+      icon: IconCar,
+    },
+    {
+      name: "Add Tour Type",
+      url: "/admin/add-tour-type",
+      icon: IconFileTypeBmp,
+    },
   ],
-}
+};
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
