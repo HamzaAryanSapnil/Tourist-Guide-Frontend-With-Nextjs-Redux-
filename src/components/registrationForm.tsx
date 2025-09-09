@@ -72,7 +72,6 @@ export function RegisterForm({
     } catch (error ) {
       console.error(error);
 
-      toast.error(error.data.message ?? "Something went wrong");
     }
   };
 

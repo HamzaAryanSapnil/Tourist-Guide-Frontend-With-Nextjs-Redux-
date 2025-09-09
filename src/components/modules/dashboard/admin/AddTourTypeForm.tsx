@@ -29,7 +29,6 @@ export default function AddTourTypeForm() {
         console.log(res);
        } catch (error) {
         console.log(error)
-        toast.error( error.data.message ??"Something went wrong");
        }
   };
   return (
