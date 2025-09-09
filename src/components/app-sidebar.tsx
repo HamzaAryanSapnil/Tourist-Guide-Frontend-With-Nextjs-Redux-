@@ -168,6 +168,11 @@ const data = {
       url: "/admin/add-tour-type",
       icon: IconFileTypeBmp,
     },
+    {
+      name: "Add Tour Division",
+      url: "/admin/add-division",
+      icon: IconCarTurbine,
+    },
   ],
 };
 
