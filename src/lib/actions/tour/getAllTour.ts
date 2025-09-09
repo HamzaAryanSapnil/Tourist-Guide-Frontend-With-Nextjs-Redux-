@@ -1,6 +1,6 @@
 "use server"
 
-const getAllTour = async ({query}) => {
+const getAllTour = async () => {
     // const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tour`, {
     //     method: "GET",
     //     headers: {
