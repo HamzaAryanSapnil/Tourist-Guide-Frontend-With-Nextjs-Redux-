@@ -42,13 +42,13 @@ export function LoginForm({
     } catch (err) {
       console.error(err);
 
-      if (err.data.message === "Password does not match") {
-        toast.error("Invalid credentials");
-      }
+      // if (err.data.message === "Password does not match") {
+      //   toast.error("Invalid credentials");
+      // }
 
-      if (err.data.message === "User is not verified") {
-        toast.error("Your account is not verified");
-      }
+      // if (err.data.message === "User is not verified") {
+      //   toast.error("Your account is not verified");
+      // }
     }
   };
 
