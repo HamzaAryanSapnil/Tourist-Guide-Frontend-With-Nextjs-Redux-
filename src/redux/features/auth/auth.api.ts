@@ -1,3 +1,4 @@
+"use client"
 import { baseApi } from "@/redux/baseApi";
 import { IResponse, ISendOtp, IVerifyOtp } from "@/types";
 

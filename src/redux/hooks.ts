@@ -1,3 +1,4 @@
+"use client"
 import { configureStore } from "@reduxjs/toolkit";
 import { baseApi } from "./baseApi";
 import { setupListeners } from "@reduxjs/toolkit/query";

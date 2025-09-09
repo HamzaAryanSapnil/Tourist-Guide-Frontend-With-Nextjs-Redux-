@@ -18,7 +18,7 @@ export function NavDocuments({
   items: {
     name: string;
     url: string;
-    icon: Icon;
+    icon?: Icon;
   }[];
 }) {
   const { isMobile } = useSidebar();
@@ -31,7 +31,7 @@ export function NavDocuments({
           <SidebarMenuItem key={item.name}>
             <SidebarMenuButton asChild>
               <Link href={item.url}>
-                <item.icon />
+                {item.icon && <item.icon />}
                 <span>{item.name}</span>
               </Link>
             </SidebarMenuButton>

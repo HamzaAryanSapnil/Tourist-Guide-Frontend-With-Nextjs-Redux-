@@ -1,20 +1,24 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
 import * as React from "react"
 import {
   IconCamera,
+  IconCar,
   IconCarTurbine,
   IconChartBar,
   IconClover,
   IconDashboard,
   IconFileAi,
   IconFileDescription,
+  IconFileTypeBmp,
   IconFolder,
   IconHelp,
   IconListDetails,
 
   IconSearch,
   IconSettings,
+  IconTypeface,
   IconUser,
   IconUserDollar,
   IconUsers,
@@ -35,8 +39,10 @@ import {
 import Link from "next/link"
 import Logo from "./logo"
 import { DollarSign, User } from "lucide-react"
+import { useUserInfoQuery } from "@/redux/features/auth/auth.api"
+import { Button } from "./ui/button"
 
-const data = {
+const baseData = {
   user: {
     name: "shadcn",
     email: "m@example.com",
@@ -155,10 +161,50 @@ const data = {
       url: "/user/wishlist",
       icon: IconCarTurbine,
     },
+    {
+      name: "Add Tour",
+      url: "/admin/add-tour",
+      icon: IconCar,
+    },
+    {
+      name: "Add Tour Type",
+      url: "/admin/add-tour-type",
+      icon: IconFileTypeBmp,
+    },
+    {
+      name: "Add Tour Division",
+      url: "/admin/add-division",
+      icon: IconCarTurbine,
+    },
   ],
+};
+
+function isAdminRole(role?: string) {
+  if (!role) return false;
+  const r = role.toString().toUpperCase();
+  return r === "ADMIN" || r === "SUPER_ADMIN";
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const { data: userResp, isLoading, isError } = useUserInfoQuery(undefined);
+  const user = (userResp && ((userResp as any).data ?? userResp)) ?? null;
+  const role =
+    user && (user.role ?? user.roles ?? user.roleName)
+      ? String(user.role ?? user.roles ?? user.roleName)
+      : undefined;
+  
+  const docsForRole = React.useMemo(() => {
+    const docs = baseData.documents ?? [];
+    // Admin & Super Admin see all
+    if (isAdminRole(role)) return docs;
+
+    // Regular user or anonymous: hide /admin routes
+    return docs.filter((d) => {
+      // if url starts with /admin -> hide for non-admins
+      if (!d.url) return true;
+      return !d.url.toLowerCase().startsWith("/admin");
+    });
+  }, [role]);
   return (
     <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>
@@ -171,7 +217,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               <Link href="/">
                 {/* <IconInnerShadowTop className="!size-5" />
                 <span className="text-base font-semibold">Tourvisto</span> */}
-                <Logo/>
+                <Logo />
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -179,12 +225,39 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         {/* <NavMain items={data.navMain} /> */}
-        <NavDocuments items={data.documents} />
-        <NavSecondary items={data.navSecondary} className="mt-auto" />
+        <NavDocuments items={docsForRole} />
+        <NavSecondary items={baseData.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        {user ? (
+          <NavUser user={user} />
+        ) : (
+          <div className="p-3">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
+                <User className="w-5 h-5 text-muted-foreground" />
+              </div>
+              <div className="flex-1">
+                <div className="text-sm font-medium">Guest</div>
+                <div className="text-xs text-muted-foreground">
+                  Not signed in
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-3 flex gap-2">
+              <Link href="/login" className="flex-1">
+                <Button className="w-full">Sign in</Button>
+              </Link>
+              <Link href="/registration" className="flex-1">
+                <Button variant="outline" className="w-full">
+                  Register
+                </Button>
+              </Link>
+            </div>
+          </div>
+        )}
       </SidebarFooter>
     </Sidebar>
-  )
+  );
 }

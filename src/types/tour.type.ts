@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface ITourPackage {
+  data?: any
   _id: string;
   title: string;
   slug: string;
