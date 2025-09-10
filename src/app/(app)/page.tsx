@@ -6,7 +6,7 @@ import StatsSection from "@/components/modules/home/StatsSection";
 import VideoSection from "@/components/modules/home/VideoSection";
 import WhyChooseUs from "@/components/modules/home/WhyChooseUs";
 import Homepage from "@/pages/Home/Homepage";
-// export const dynamic = "force-static";
+export const dynamic = "force-static";
 export default function Home() {
   return (
     <div>
