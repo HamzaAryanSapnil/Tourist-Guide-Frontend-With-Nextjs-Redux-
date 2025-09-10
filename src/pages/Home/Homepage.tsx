@@ -14,6 +14,7 @@ export default function Homepage() {
         className="w-full h-full object-cover absolute top-0 left-0 -z-20"
         fill
         priority
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
       <div className=" absolute left-0 right-0 container mx-auto px-4 md:px-6 w-full h-full">
         <Hero />
