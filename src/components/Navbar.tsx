@@ -104,7 +104,7 @@ export default function Navbar() {
             </div>
           </div>
           {/* Middle area */}
-          <NavigationMenu className="max-lg:hidden">
+          <NavigationMenu className="max-lg:hidden flex-1">
             <NavigationMenuList className="gap-2">
               {navigationLinks.map((link, index) => {
                 const Icon = link.icon;
@@ -112,14 +112,14 @@ export default function Navbar() {
                   <NavigationMenuItem key={index}>
                     <NavigationMenuLink
                       href={link.href}
-                      className="text-foreground hover:text-primary flex-row items-center gap-2 py-1.5 font-medium"
+                      className="text-foreground hover:text-primary flex-row justify-center items-center gap-2 py-1.5 font-medium"
                     >
                       <Icon
                         size={16}
                         className="text-muted-foreground/80"
                         aria-hidden="true"
                       />
-                      <span>{link.label}</span>
+                      <span className="text-nowrap" >{link.label}</span>
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                 );
