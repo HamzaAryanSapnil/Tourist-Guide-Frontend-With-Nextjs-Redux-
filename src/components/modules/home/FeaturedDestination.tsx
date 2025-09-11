@@ -37,6 +37,9 @@ export default function FeaturedDestination() {
               src={cardImg2}
               alt="Barcelona featured tour"
               className=" object-cover rounded-xl w-full h-full"
+              height={720}
+              width={720}
+              priority
             />
             <div className="flex flex-col justify-center lg:justify-end  items-center lg:items-start gap-y-3 absolute left-0 right-0 bottom-0 top-0 lg:bottom-4 lg:left-4">
               <h3 className="font-bold text-3xl text-white">Barcelona Tour</h3>

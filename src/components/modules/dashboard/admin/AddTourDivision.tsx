@@ -13,7 +13,9 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useUserInfoQuery } from "@/redux/features/auth/auth.api";
 import { useAddDivisionMutation } from "@/redux/features/Tour/division.api";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -21,6 +23,8 @@ import { toast } from "sonner";
 export default function AddTourDivisionForm() {
   const [image, setImage] = useState<File | null>(null);
   const [addDivision] = useAddDivisionMutation();
+ 
+
   const form = useForm({
     defaultValues: {
       name: "",
@@ -45,6 +49,9 @@ export default function AddTourDivisionForm() {
       console.error(err);
     }
   };
+
+  
+
   return (
     <div className="max-w-xl w-full">
       <Form {...form}>

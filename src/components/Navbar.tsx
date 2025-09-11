@@ -1,3 +1,4 @@
+"use client";
 import { useId } from "react";
 import { Car, DockIcon, FileQuestionMark, HouseIcon } from "lucide-react";
 
@@ -16,6 +17,8 @@ import {
 } from "@/components/ui/popover";
 import { ModeToggle } from "./theme-toggler";
 import Link from "next/link";
+import { authApi, useLogoutMutation, useUserInfoQuery } from "@/redux/features/auth/auth.api";
+import { useAppDispatch } from "@/redux/hooks";
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
@@ -27,8 +30,14 @@ const navigationLinks = [
 ];
 
 export default function Navbar() {
-  const id = useId();
-  console.log(id);
+  const { data } = useUserInfoQuery(undefined);
+  const [logout] = useLogoutMutation();
+  const dispatch = useAppDispatch();
+
+  const handleLogout = async () => {
+    await logout(undefined);
+    dispatch(authApi.util.resetApiState());
+  };
 
   return (
     <header className="  sticky top-0 z-50 bg-background ">
@@ -119,7 +128,7 @@ export default function Navbar() {
                         className="text-muted-foreground/80"
                         aria-hidden="true"
                       />
-                      <span className="text-nowrap" >{link.label}</span>
+                      <span className="text-nowrap">{link.label}</span>
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                 );
@@ -129,9 +138,20 @@ export default function Navbar() {
           {/* Right side */}
           <div className="flex flex-1 items-center justify-end gap-2">
             <ModeToggle />
-            <Link href="/login">
-              <Button>Login</Button>
-            </Link>
+            {data?.data?.email && (
+              <Button
+                onClick={handleLogout}
+                variant="outline"
+                className="text-sm  "
+              >
+                Logout
+              </Button>
+            )}
+            {!data?.data?.email && (
+              <Button asChild className="text-sm">
+                <Link href="/login">Login</Link>
+              </Button>
+            )}
           </div>
         </div>
       </div>

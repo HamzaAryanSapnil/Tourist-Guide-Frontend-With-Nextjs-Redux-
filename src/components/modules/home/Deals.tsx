@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { LocationEdit, Users, WatchIcon } from "lucide-react";
-import React from "react";
+import SaymanHotelImg from '@/assets/homeImages/sayman-hotel.jpg'
+import SazekImg from '@/assets/homeImages/sazek.jpg'
+import BandarbanImg from '@/assets/homeImages/bandarban.png'
 
 export default function Deals() {
   return (
@@ -8,7 +10,7 @@ export default function Deals() {
       <div className="flex flex-col justify-center items-center gap-y-6 w-full">
         <h1 className="font-bold text-4xl my-10">Deals</h1>
         <div
-          style={{ backgroundImage: "url(/assets/images/bandarban.png)" }}
+          style={{ backgroundImage: `url(${BandarbanImg})` }}
           className="w-full min-h-[400px] p-2 bg-no-repeat bg-cover bg-center rounded-xl flex justify-center lg:justify-start items-center"
         >
           <div className="p-4 md:w-96 md:h-80 bg-white/60 rounded-2xl flex flex-col justify-center items-center gap-5 lg:ml-48">
@@ -44,7 +46,7 @@ export default function Deals() {
           </div>
         </div>
         <div
-          style={{ backgroundImage: "url(/assets/images/sazek.jpg)" }}
+          style={{ backgroundImage: `url(${SazekImg})` }}
           className="w-full min-h-[400px] p-2 bg-no-repeat bg-cover bg-center rounded-xl flex justify-center lg:justify-end items-center"
         >
           <div className="p-4 md:w-96 md:h-80 bg-white/70 rounded-2xl flex flex-col justify-center items-center gap-5 lg:mr-48">
@@ -83,7 +85,7 @@ export default function Deals() {
           </div>
         </div>
         <div
-          style={{ backgroundImage: "url(/assets/images/sayman-hotel.jpg)" }}
+          style={{ backgroundImage: `url(${SaymanHotelImg})` }}
           className="w-full min-h-[400px] p-2 bg-no-repeat bg-cover bg-center rounded-xl flex justify-center lg:justify-start items-center"
         >
           <div className="p-4 md:w-96 md:h-80 bg-white/60 rounded-2xl flex flex-col justify-center items-center gap-5 lg:ml-48">
